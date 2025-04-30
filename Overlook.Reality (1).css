@@ -1,0 +1,13 @@
+
+body { font-family: Arial, sans-serif; font-size: 1.25rem; line-height: 1.6; margin: 0; padding: 0; }
+section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; }
+.header { background: #1a1f71; padding: 1em; color: white; text-align: center; position: sticky; top: 0; z-index: 1000; }
+.navbar ul { list-style: none; display: flex; justify-content: center; gap: 2em; padding: 0; }
+.navbar a { color: white; text-decoration: none; font-weight: bold; }
+.hero img { width: 100%; height: auto; border-radius: 12px; }
+.service-cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 2em; }
+.card { background: white; padding: 1em; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 250px; text-align: center; transition: transform 0.3s ease; }
+.card:hover { transform: scale(1.05); }
+.cta { background: #f4f4f4; text-align: center; padding: 60px 20px; border-top: 1px solid #ccc; }
+.cta button { background-color: #1a1f71; color: white; padding: 1em 2em; font-size: 1.2rem; border: none; border-radius: 5px; cursor: pointer; margin-top: 20px; }
+.footer { background: #1a1f71; color: white; text-align: center; padding: 2em; }
