@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Overlook Reality</title>
+  <link rel="stylesheet" href="Overlook.Reality.css" />
+  <style>
+    html {{
+      scroll-behavior: smooth;
+    }}
+    body {{
+      font-family: Arial, sans-serif;
+      font-size: 1.25rem;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }}
+    section {{
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }}
+    .header {{
+      background: #1a1f71;
+      padding: 1em;
+      color: white;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }}
+    .navbar ul {{
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      padding: 0;
+    }}
+    .navbar a {{
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }}
+    .hero img {{
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }}
+    .service-cards {{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2em;
+    }}
+    .card {{
+      background: white;
+      padding: 1em;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 250px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }}
+    .card:hover {{
+      transform: scale(1.05);
+    }}
+    .cta {{
+      background: #f4f4f4;
+      text-align: center;
+      padding: 60px 20px;
+      border-top: 1px solid #ccc;
+    }}
+    .cta button {{
+      background-color: #1a1f71;
+      color: white;
+      padding: 1em 2em;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }}
+    .footer {{
+      background: #1a1f71;
+      color: white;
+      text-align: center;
+      padding: 2em;
+    }}
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <h1>Overlook Reality</h1>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <img src="https://images.unsplash.com/photo-1598928506311-c55ded3f56a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Real Estate Hero" />
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Overlook Reality is a solo-agent real estate firm built on trust, communication, and results. I bring hands-on market knowledge and a personal approach to every client experience. Whether you're buying your first home or investing in property, I'm here to guide you every step of the way.</p>
+    </section>
+
+    <section id="services">
+      <h2>Our Services</h2>
+      <div class="service-cards">
+        <div class="card"><a href="#contact"><h3>Buy</h3><p>Find your dream home with our expert agents.</p></a></div>
+        <div class="card"><a href="#contact"><h3>Sell</h3><p>Get the best value for your property with our help.</p></a></div>
+        <div class="card"><a href="#contact"><h3>Invest</h3><p>Discover lucrative real estate investment opportunities.</p></a></div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Ready to make your next move?</h2>
+      <p>Schedule a free consultation with Overlook Reality today.</p>
+      <a href="#contact"><button>Contact Me</button></a>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form action="https://formspree.io/f/mjkwgoro" method="POST" style="display: flex; flex-direction: column; gap: 1em; max-width: 500px; margin: auto;">
+        <input type="text" name="name" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="tel" name="phone" placeholder="Phone Number" />
+        <select name="interest" required>
+          <option value="">-- I'm interested in --</option>
+          <option value="Buying">Buying</option>
+          <option value="Selling">Selling</option>
+          <option value="Investing">Investing</option>
+        </select>
+        <textarea name="message" placeholder="Your message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    <p style="text-align:center; margin-top: 2em;">Or email me directly at <a href="mailto:Contact@overlookreality.com">Contact@overlookreality.com</a></p>
+</section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Overlook Reality. All rights reserved.</p>
+  </footer>
+</body>
+</html>
