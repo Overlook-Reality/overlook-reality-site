@@ -1,0 +1,124 @@
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+header {
+  background: #1a1f71;
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding: 0;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+.hero {
+  background: url('https://images.unsplash.com/photo-1572120360610-d971b9d7767c?auto=format&fit=crop&w=1600&q=80') no-repeat center center;
+  background-size: cover;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+.about {
+  background: #f9f9f9;
+}
+.values {
+  background: #ffffff;
+  padding: 4rem 2rem;
+}
+.values h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+.value-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  max-width: 1000px;
+  margin: auto;
+}
+.value-box {
+  background: #f0f0f0;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 280px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+.value-box h3 {
+  margin-top: 0;
+  color: #1a1f71;
+}
+.cards {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card {
+  background: rgba(255,255,255,0.9);
+  padding: 2rem;
+  border-radius: 10px;
+  width: 280px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  color: #000;
+}
+.contact {
+  background: #fff;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+}
+input, select, textarea {
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+button {
+  background: #1a1f71;
+  color: white;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+footer {
+  background: #1a1f71;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
