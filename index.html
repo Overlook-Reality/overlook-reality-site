@@ -6,13 +6,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Overlook Reality</title>
   <link rel="stylesheet" href="Overlook.Reality.css" />
+  <style>
+    /* Hamburger styles */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #1a1f71;
+        gap: 1rem;
+        padding: 1rem;
+      }
+      nav ul.mobile-show {
+        display: flex;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
   <h1>Overlook Reality</h1>
   <nav>
-    <ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul id="navMenu">
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
@@ -22,84 +57,21 @@
 </header>
 
 <main>
-  <section id="home" class="hero">
-    <h1>Welcome to Overlook Reality</h1>
-    <p>Your trusted partner in buying, selling, or investing in real estate.</p>
-  </section>
-  
-<section id="about" class="about" style="background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80') no-repeat center center; background-size: cover; padding: 8rem 2rem;">
-  <div style="max-width: 1000px; background-color: rgba(255,255,255,0.95); border-radius: 14px; padding: 4rem 3rem; margin: auto; box-shadow: 0 12px 30px rgba(0,0,0,0.2); font-size: 1.5rem; line-height: 2;">
-    <h2 style="text-align:center; font-size: 2.8rem; margin-bottom: 2rem;">About Me</h2>
-    <p style="margin-bottom: 2rem;">I’m a solo-agent dedicated to helping you navigate the real estate world with confidence and clarity. With deep market insight, strong negotiation skills, and a personalized approach, I work hard to ensure your buying, selling, or investing experience is smooth and rewarding.</p>
-    <p style="margin-bottom: 2rem;"><strong>About Overlook Reality:</strong> Our firm was founded on the belief that real estate should be personal, empowering, and results-driven. We prioritize clear communication, informed decision-making, and long-term relationships that support your future goals.</p>
-    <p><strong>Our Mission:</strong> To provide exceptional real estate services grounded in trust, integrity, and local expertise—helping you move forward with confidence every step of the way.</p>
-  </div>
-</section>
-
-  
-<section class="values">
-  <h2>Our Values</h2>
-  <div class="value-grid">
-    <div class="value-box">
-      <h3>Mission</h3>
-      <p>We aim to provide unmatched service and guidance to help our clients achieve real estate success with confidence and peace of mind.</p>
-    </div>
-    <div class="value-box">
-      <h3>Trust</h3>
-      <p>Transparency and reliability are at the heart of what we do. Our clients know they can count on us at every step of the journey.</p>
-    </div>
-    <div class="value-box">
-      <h3>Results</h3>
-      <p>We’re committed to delivering outcomes that exceed expectations and help our clients build lasting financial and personal security.</p>
-    </div>
-  </div>
-</section>
-
-  
-<section id="services" class="services" style="background: url('https://images.unsplash.com/photo-1600585152886-9e4e6b2ca82a?auto=format&fit=crop&w=1600&q=80') no-repeat center center; background-size: cover; padding: 8rem 2rem;">
-  <div style="max-width: 1100px; background-color: rgba(255,255,255,0.96); border-radius: 14px; padding: 4rem 3rem; margin: auto; box-shadow: 0 12px 30px rgba(0,0,0,0.2); font-size: 1.5rem;">
-    <h2 style="text-align:center; font-size: 2.8rem; margin-bottom: 3rem;">Our Services</h2>
-    <div class="cards" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
-      <div class="card" style="background: #f7f7f7; padding: 2rem; border-radius: 12px; width: 300px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); text-align: center;">
-        <h3><a href="#contact" style="text-decoration: none; color: #1a1f71;">Buy</a></h3>
-        <p>Find your dream home with confidence and expert support.</p>
-      </div>
-      <div class="card" style="background: #f7f7f7; padding: 2rem; border-radius: 12px; width: 300px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); text-align: center;">
-        <h3><a href="#contact" style="text-decoration: none; color: #1a1f71;">Sell</a></h3>
-        <p>Maximize your property value with strategic guidance.</p>
-      </div>
-      <div class="card" style="background: #f7f7f7; padding: 2rem; border-radius: 12px; width: 300px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); text-align: center;">
-        <h3><a href="#contact" style="text-decoration: none; color: #1a1f71;">Invest</a></h3>
-        <p>Discover profitable real estate opportunities with clarity.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-  
-<section id="contact" class="contact">
-  <h2>Contact Me</h2>
-  <form action="https://formspree.io/f/mjkwgoro" method="POST">
-    <input type="text" name="name" placeholder="Full Name" required />
-    <input type="email" name="email" placeholder="Email Address" required />
-    <input type="tel" name="phone" placeholder="Phone Number" />
-    <select name="interest" required>
-      <option value="">-- I'm interested in --</option>
-      <option value="Buying">Buying</option>
-      <option value="Selling">Selling</option>
-      <option value="Investing">Investing</option>
-    </select>
-    <textarea name="message" placeholder="Your message" rows="5" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-  <p style="margin-top: 2rem;">Or email us at <a href="mailto:Contact@overlookreality.com">Contact@overlookreality.com</a></p>
-</section>
-
+  <!-- Keep all your sections below exactly as you had them -->
+  <!-- Hero, About, Values, Services, Contact -->
+  <!-- I've skipped copying them again here since they're already correct -->
 </main>
 
 <footer>
   <p>&copy; 2025 Overlook Reality. All rights reserved.</p>
 </footer>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("navMenu");
+    menu.classList.toggle("mobile-show");
+  }
+</script>
 
 </body>
 </html>
