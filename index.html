@@ -94,18 +94,9 @@
     <div style="max-width: 1100px; background-color: rgba(255,255,255,0.96); border-radius: 14px; padding: 4rem 3rem; margin: auto; box-shadow: 0 12px 30px rgba(0,0,0,0.2); font-size: 1.5rem;">
       <h2 style="text-align:center; font-size: 2.8rem; margin-bottom: 3rem;">Our Services</h2>
       <div class="cards" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
-        <div class="card" style="background: #f7f7f7; padding: 2rem; border-radius: 12px; width: 300px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); text-align: center;">
-          <h3><a href="#contact" style="text-decoration: none; color: #1a1f71;">Buy</a></h3>
-          <p>Find your dream home with confidence and expert support.</p>
-        </div>
-        <div class="card" style="background: #f7f7f7; padding: 2rem; border-radius: 12px; width: 300px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); text-align: center;">
-          <h3><a href="#contact" style="text-decoration: none; color: #1a1f71;">Sell</a></h3>
-          <p>Maximize your property value with strategic guidance.</p>
-        </div>
-        <div class="card" style="background: #f7f7f7; padding: 2rem; border-radius: 12px; width: 300px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); text-align: center;">
-          <h3><a href="#contact" style="text-decoration: none; color: #1a1f71;">Invest</a></h3>
-          <p>Discover profitable real estate opportunities with clarity.</p>
-        </div>
+        <div class="card"><h3><a href="#contact">Buy</a></h3><p>Find your dream home with confidence and expert support.</p></div>
+        <div class="card"><h3><a href="#contact">Sell</a></h3><p>Maximize your property value with strategic guidance.</p></div>
+        <div class="card"><h3><a href="#contact">Invest</a></h3><p>Discover profitable real estate opportunities with clarity.</p></div>
       </div>
     </div>
   </section>
@@ -115,4 +106,55 @@
     <form id="contact-form" action="https://formspree.io/f/mjkwgoro" method="POST">
       <input type="text" name="name" placeholder="Full Name" required />
       <input type="email" name="email" placeholder="Email Address" required />
-      <input type="tel
+      <input type="tel" name="phone" placeholder="Phone Number" />
+      <select name="interest" required>
+        <option value="">-- I'm interested in --</option>
+        <option value="Buying">Buying</option>
+        <option value="Selling">Selling</option>
+        <option value="Investing">Investing</option>
+      </select>
+      <textarea name="message" placeholder="Your message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p style="margin-top: 2rem;">Or email us at <a href="mailto:Contact@overlookreality.com">Contact@overlookreality.com</a></p>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 Overlook Reality. All rights reserved.</p>
+  <p>Phone: (555) 123-4567 | Email: contact@overlookreality.com</p>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("navMenu");
+    menu.classList.toggle("mobile-show");
+  }
+
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const data = new FormData(form);
+
+    fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        window.location.href = 'https://overlookreality.com/questionnaire.html';
+      } else {
+        alert('There was a problem submitting the form.');
+      }
+    }).catch(error => {
+      alert('There was a problem submitting the form.');
+    });
+  });
+</script>
+
+</body>
+</html>
