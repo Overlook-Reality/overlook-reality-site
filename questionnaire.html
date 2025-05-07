@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Next Step – Questionnaire | Overlook Reality</title>
+  <title>Questionnaire | Overlook Reality</title>
   <link rel="stylesheet" href="Overlook.Reality.css" />
   <style>
     body {
@@ -15,7 +15,7 @@
     .questionnaire-container {
       background: white;
       padding: 2.5rem;
-      max-width: 600px;
+      max-width: 650px;
       margin: auto;
       border-radius: 10px;
       box-shadow: 0 0 20px rgba(0,0,0,0.1);
@@ -51,6 +51,9 @@
     button:hover {
       background: #151a5d;
     }
+    .hidden {
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -60,7 +63,63 @@
   <form id="questionnaire-form" action="https://formspree.io/f/mjkwgoro" method="POST">
     <input type="hidden" name="source" value="Questionnaire Page" />
 
-    <label for="timeline">What’s your ideal timeline to buy/sell/invest?</label>
+    <label for="interest">Are you Buying, Selling, or Investing?</label>
+    <select name="interest" id="interest" required>
+      <option value="">-- Select --</option>
+      <option value="Buying">Buying</option>
+      <option value="Selling">Selling</option>
+      <option value="Investing">Investing</option>
+    </select>
+
+    <!-- BUYER Questions -->
+    <div id="buyer-questions" class="hidden">
+      <label for="location">Desired location:</label>
+      <input type="text" name="location" id="location" placeholder="City or neighborhood" />
+
+      <label for="budget">Budget range:</label>
+      <input type="text" name="budget" id="budget" placeholder="$200,000 - $400,000" />
+
+      <label for="features">Preferred features (e.g., 3 beds, 2 baths):</label>
+      <input type="text" name="features" id="features" />
+    </div>
+
+    <!-- SELLER Questions -->
+    <div id="seller-questions" class="hidden">
+      <label for="address">Property address:</label>
+      <input type="text" name="address" id="address" />
+
+      <label for="condition">Condition of the property:</label>
+      <select name="condition" id="condition">
+        <option value="">-- Select --</option>
+        <option value="Move-in ready">Move-in ready</option>
+        <option value="Minor repairs needed">Minor repairs needed</option>
+        <option value="Full renovation needed">Full renovation needed</option>
+        <option value="Vacant">Vacant</option>
+      </select>
+
+      <label for="mortgage">Is there an existing mortgage or lien?</label>
+      <input type="text" name="mortgage" id="mortgage" placeholder="e.g., Yes – $120,000" />
+    </div>
+
+    <!-- INVESTOR Questions -->
+    <div id="investing-questions" class="hidden">
+      <label for="investmentType">What type of properties are you looking to invest in?</label>
+      <input type="text" name="investmentType" id="investmentType" placeholder="e.g., fix-and-flip, rental, land" />
+
+      <label for="cashReady">Are you using cash or financing?</label>
+      <select name="cashReady" id="cashReady">
+        <option value="">-- Select --</option>
+        <option value="Cash">Cash</option>
+        <option value="Financing">Financing</option>
+        <option value="Both">Both</option>
+      </select>
+
+      <label for="investmentGoals">What are your investment goals?</label>
+      <textarea name="investmentGoals" id="investmentGoals" rows="3" placeholder="Profit margin, time frame, volume..."></textarea>
+    </div>
+
+    <!-- COMMON -->
+    <label for="timeline">Ideal timeline:</label>
     <select name="timeline" id="timeline" required>
       <option value="">-- Select --</option>
       <option value="ASAP">ASAP</option>
@@ -70,21 +129,6 @@
       <option value="Just browsing">Just browsing</option>
     </select>
 
-    <label for="propertyType">What type of property are you looking to buy/sell?</label>
-    <input type="text" id="propertyType" name="propertyType" placeholder="e.g. Single-family, multi-unit, vacant land" required />
-
-    <label for="condition">What is the condition of the property (if selling)?</label>
-    <select name="condition" id="condition">
-      <option value="">-- Select --</option>
-      <option value="Move-in ready">Move-in ready</option>
-      <option value="Needs minor repairs">Needs minor repairs</option>
-      <option value="Needs full renovation">Needs full renovation</option>
-      <option value="Vacant">Vacant</option>
-    </select>
-
-    <label for="price">Do you have a price range or budget in mind?</label>
-    <input type="text" id="price" name="price" placeholder="e.g. $150,000 – $300,000" />
-
     <label for="goals">What are your goals or biggest concerns?</label>
     <textarea id="goals" name="goals" rows="4" placeholder="Tell us what's important to you..."></textarea>
 
@@ -93,6 +137,26 @@
 </div>
 
 <script>
+  const interestSelect = document.getElementById('interest');
+  const buyerSection = document.getElementById('buyer-questions');
+  const sellerSection = document.getElementById('seller-questions');
+  const investingSection = document.getElementById('investing-questions');
+
+  interestSelect.addEventListener('change', function () {
+    const value = this.value;
+    buyerSection.classList.add('hidden');
+    sellerSection.classList.add('hidden');
+    investingSection.classList.add('hidden');
+
+    if (value === 'Buying') {
+      buyerSection.classList.remove('hidden');
+    } else if (value === 'Selling') {
+      sellerSection.classList.remove('hidden');
+    } else if (value === 'Investing') {
+      investingSection.classList.remove('hidden');
+    }
+  });
+
   document.getElementById('questionnaire-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -119,3 +183,4 @@
 
 </body>
 </html>
+
